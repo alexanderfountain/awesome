@@ -27,15 +27,15 @@ const social = [
 ];
 
 const Navigation = ({ path }) => {
-  const data = useStaticQuery(graphql`
-    query HeaderQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
+  // const data = useStaticQuery(graphql`
+  //   query HeaderQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `);
 
   return (
     <StyledNavigation>
