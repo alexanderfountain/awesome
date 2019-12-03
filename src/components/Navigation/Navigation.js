@@ -42,34 +42,33 @@ const Navigation = ({ path }) => {
   // `);
 
   return (
-    // <StyledNavigation>
-    //   <Container maxWidth={1200}>
-    //     <Inner>
-    //       <Brand to="/">{name}</Brand>
-    //       <Nav>
-    //         {items.map(({ label, to, href }) =>
-    //           to ? (
-    //             <Item key={uid(label)} to={to} isActive={to === path}>
-    //               {label}
-    //             </Item>
-    //           ) : (
-    //             <Item key={uid(label)} as="a" href={href}>
-    //               {label}
-    //             </Item>
-    //           ),
-    //         )}
-    //       </Nav>
-    //       <Social>
-    //         {social.map(({ label, href }) => (
-    //           <Item key={uid(label)} as="a" href={href} style={{ lineHeight: 0 }}>
-    //             {label}
-    //           </Item>
-    //         ))}
-    //       </Social>
-    //     </Inner>
-    //   </Container>
-    // </StyledNavigation>
-    <h2>test2</h2>
+    <StyledNavigation>
+      <Container maxWidth={1200}>
+        <Inner>
+          <Brand to="/">The name</Brand>
+          <Nav>
+            {items.map(({ label, to, href }) =>
+              to ? (
+                <Item key={uid(label)} to={to} isActive={to === path}>
+                  {label}
+                </Item>
+              ) : (
+                <Item key={uid(label)} as="a" href={href}>
+                  {label}
+                </Item>
+              ),
+            )}
+          </Nav>
+          <Social>
+            {social.map(({ label, href }) => (
+              <Item key={uid(label)} as="a" href={href} style={{ lineHeight: 0 }}>
+                {label}
+              </Item>
+            ))}
+          </Social>
+        </Inner>
+      </Container>
+    </StyledNavigation>
   );
 };
 
