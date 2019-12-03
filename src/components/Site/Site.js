@@ -18,12 +18,10 @@ const Site = ({ children, seo, ...other }) => (
 
 Site.propTypes = {
   children: PropTypes.node,
-  seo: SEO.propTypes.seo,
 };
 
 Site.defaultProps = {
   children: null,
-  seo: {},
 };
 
 export { Site };

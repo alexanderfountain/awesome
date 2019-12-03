@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql } from 'gatsby';
 import { uid } from 'react-uid';
 
 import { Container } from '../ui/Container';
@@ -38,33 +38,22 @@ const Navigation = ({ path }) => {
   // `);
 
   return (
-    <StyledNavigation>
-      <Container maxWidth={1200}>
-        <Inner>
-          <Brand to="/">The name</Brand>
-          <Nav>
-            {items.map(({ label, to, href }) =>
-              to ? (
-                <Item key={uid(label)} to={to} isActive={to === path}>
-                  {label}
-                </Item>
-              ) : (
-                <Item key={uid(label)} as="a" href={href}>
-                  {label}
-                </Item>
-              ),
-            )}
-          </Nav>
-          <Social>
-            {social.map(({ label, href }) => (
-              <Item key={uid(label)} as="a" href={href} style={{ lineHeight: 0 }}>
-                {label}
-              </Item>
-            ))}
-          </Social>
-        </Inner>
-      </Container>
-    </StyledNavigation>
+    <StaticQuery
+      query={graphql`
+        query HeadingQuery {
+          site {
+            siteMetadata {
+              name
+            }
+          }
+        }
+      `}
+      render={data => (
+        <header>
+          <h1>{data.site.siteMetadata.name}</h1>
+        </header>
+      )}
+    />
   );
 };
 
