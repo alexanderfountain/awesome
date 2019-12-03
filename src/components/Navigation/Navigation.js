@@ -42,6 +42,7 @@ const Navigation = ({ path }) => {
   // `);
 
   return (
+<<<<<<< HEAD
     // <StyledNavigation>
     //   <Container maxWidth={1200}>
     //     <Inner>
@@ -70,6 +71,35 @@ const Navigation = ({ path }) => {
     //   </Container>
     // </StyledNavigation>
     <h1>test</h1>
+=======
+    <StyledNavigation>
+      <Container maxWidth={1200}>
+        <Inner>
+          <Brand to="/">The Name</Brand>
+          <Nav>
+            {items.map(({ label, to, href }) =>
+              to ? (
+                <Item key={uid(label)} to={to} isActive={to === path}>
+                  {label}
+                </Item>
+              ) : (
+                <Item key={uid(label)} as="a" href={href}>
+                  {label}
+                </Item>
+              ),
+            )}
+          </Nav>
+          <Social>
+            {social.map(({ label, href }) => (
+              <Item key={uid(label)} as="a" href={href} style={{ lineHeight: 0 }}>
+                {label}
+              </Item>
+            ))}
+          </Social>
+        </Inner>
+      </Container>
+    </StyledNavigation>
+>>>>>>> aaa866db058a2050844400dda193e4123a1702a4
   );
 };
 
