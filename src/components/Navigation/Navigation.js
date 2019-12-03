@@ -27,24 +27,11 @@ const social = [
 ];
 
 const Navigation = ({ path }) => {
-  // const {
-  //   site: {
-  //     siteMetadata: { name },
-  //   },
-  // } = useStaticQuery(graphql`
-  //   {
-  //     site {
-  //       siteMetadata {
-  //         name
-  //       }
-  //     }
-  //   }
-  // `);
   const data = useStaticQuery(graphql`
     query HeaderQuery {
       site {
         siteMetadata {
-          name
+          title
         }
       }
     }
