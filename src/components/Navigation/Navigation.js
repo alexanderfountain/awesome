@@ -44,7 +44,7 @@ const Navigation = ({ path }) => {
     query HeaderQuery {
       site {
         siteMetadata {
-          title
+          name
         }
       }
     }
